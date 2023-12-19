@@ -17,3 +17,5 @@ menu = [
 ]
 
 prices = [7.99, 5.99, 3.99, 7.00, 4.00, 3.99, 4.00, 6.99]
+
+print("\nWelcome to Pawesome Warehouse \n\nWhat would you like to do?\n")
