@@ -41,4 +41,5 @@ class ShoppingCart:
     def add_item(self, item, price):
             if item in self.items: 
                 self.items[item] += price 
-            
+            else: 
+                self.items[item] = price 
