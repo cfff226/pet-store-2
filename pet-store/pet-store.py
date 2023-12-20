@@ -18,6 +18,8 @@ menu = [
 
 prices = [7.99, 5.99, 3.99, 7.00, 4.00, 3.99, 4.00, 6.99]
 
+# Display the menu and the cart until the user checks out
+
 print("\nWelcome to Pawesome Warehouse \n\nWhat would you like to do?\n")
 
 done = False
@@ -28,3 +30,11 @@ while not done:
     choice = input(
         "\nPlease enter the number of the option that you would like to choose: "
     )
+    break
+    done = True
+
+class ShoppingCart: 
+    def __init__(self):
+        self.items = {}
+
+        
