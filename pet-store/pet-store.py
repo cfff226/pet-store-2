@@ -16,30 +16,20 @@ menu = [
     "Chicken And Country Vegetable Dry Dog Food        ",
 ]
 
-price = [7.99, 5.99, 3.99, 7.00, 4.00, 3.99, 4.00, 6.99]
 
-# Display the menu and the cart until the user checks out
-print("\nWelcome to Pawesome Warehouse \n\nWhat would you like to do?\n")
+def main():
+    shopping_list = []
 
-done = False
-while not done:
-    print(
-        "1. Add an item to your cart \n2. Remove an item from your cart \n3. View your cart \n4. Checkout"
-    )
-    choice = input(
-        "\nPlease enter the number of the option that you would like to choose: "
-    )
-    break
-    done = True
+    while True:
+        # Display the menu and the cart until the user checks out
+        print("\nWelcome to Pawesome Warehouse \n\nWhat would you like to do?\n")
 
+        print(
+            "1. Add an item to your cart \n2. Remove an item from your cart \n3. View your cart \n4. Checkout"
+        )
+        choice = input(
+            "\nPlease enter the number of the option that you would like to choose: "
+        )
 
-# Class to include all data and functions of the shopping cart
-class ShoppingCart:
-    def __init__(self):
-        self.items = {}
+main()
 
-    def add_item(self, item, price):
-            if item in self.items: 
-                self.items[item] += price 
-            else: 
-                self.items[item] = price 
