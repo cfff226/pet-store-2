@@ -16,7 +16,7 @@ menu = [
     "Chicken And Country Vegetable Dry Dog Food        ",
 ]
 
-prices = [7.99, 5.99, 3.99, 7.00, 4.00, 3.99, 4.00, 6.99]
+price = [7.99, 5.99, 3.99, 7.00, 4.00, 3.99, 4.00, 6.99]
 
 # Display the menu and the cart until the user checks out
 print("\nWelcome to Pawesome Warehouse \n\nWhat would you like to do?\n")
