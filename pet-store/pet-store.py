@@ -30,6 +30,16 @@ def main():
         choice = input(
             "\nPlease enter the number of the option that you would like to choose: "
         )
+        # if choice == "1":
+        #     add_item(shopping_list)
+        # elif choice == "2":
+        #     view_cart(shopping_list)
+        # elif choice == "3":
+        #     remove_item(shopping_list)
+        # elif choice == "4":
+        # print("Thank you for shopping at Pawesome Warehouse")
+        # else:
+        # continue
 
 main()
 
