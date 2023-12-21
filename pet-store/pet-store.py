@@ -69,12 +69,18 @@ def view_cart(shopping_cart, shopping_quant):
 
 
 # Remove item from cart
-def remove_item(shopping_cart, shopping_quant):
-    
-
-
-
-
+def remove_item(shopping_cart):
+    try:
+        remove_item_input = int(
+            input("\nPlease input the number of the item you wish to remove: ")
+        )
+        print("\nYou selected: ", shopping_cart[remove_item_input - 1])
+    except ValueError:
+        print("You have entered an incorrect value")
+        remove_item(shopping_cart)
+    except IndexError:
+        print("This item does not exist in your cart")
+        remove_item(shopping_cart)
 
 
 def main():
