@@ -4,7 +4,6 @@ import math
 # This program is a simplified version to pet-store and will include functions
 
 # List of items
-
 menu = [
     "Purina One Cat Salmon - Whole Grain               ",
     "Iams Senior 7+ Cat Food With Ocean Fish           ",
@@ -16,6 +15,20 @@ menu = [
     "Chicken And Country Vegetable Dry Dog Food        ",
 ]
 
+# Add item to cart
+def add_item(shopping_list):
+    try:
+        item = int(
+            input(
+                "\nPlease input the number of the item that you would like to add to your cart: "
+            )
+        )
+        shopping_list.append(item)
+        print(shopping_list)
+    except ValueError:
+        print("You have entered an incorrect value")
+        add_item(shopping_list)
+  
 
 def main():
     shopping_list = []
@@ -30,8 +43,8 @@ def main():
         choice = input(
             "\nPlease enter the number of the option that you would like to choose: "
         )
-        # if choice == "1":
-        #     add_item(shopping_list)
+        if choice == "1":
+            add_item(shopping_list)
         # elif choice == "2":
         #     view_cart(shopping_list)
         # elif choice == "3":
