@@ -19,7 +19,7 @@ prices = [7.99, 5.99, 3.99, 7.00, 4.00, 3.99, 4.00, 6.99]
 
 
 # Add item to cart
-def add_item(shopping_list):
+def add_item(shopping_cart):
     for i in range(len(menu)):
         print(str(i + 1) + ". " + menu[i], prices[i])
 
@@ -29,16 +29,16 @@ def add_item(shopping_list):
                 "\nPlease input the number of the item that you would like to add to your cart: "
             )
         )
-        shopping_list.append(menu[item - 1])
-        print(shopping_list)
+        shopping_cart.append(menu[item - 1])
+        print(shopping_cart)
     
         print(menu[item -1])
-        if menu[item -1] in shopping_list:
+        if menu[item -1] in shopping_cart:
             print("this item is in your cart")
 
     except ValueError:
         print("You have entered an incorrect value")
-        add_item(shopping_list)
+        add_item(shopping_cart)
 
 
 
@@ -55,7 +55,7 @@ def add_item(shopping_list):
 
 
 def main():
-    shopping_list = []
+    shopping_cart = []
 
     while True:
         # Display the menu and the cart until the user checks out
@@ -68,11 +68,11 @@ def main():
             "\nPlease enter the number of the option that you would like to choose: "
         )
         if choice == "1":
-            add_item(shopping_list)
+            add_item(shopping_cart)
         # elif choice == "2":
-        #     view_cart(shopping_list)
+        #     view_cart(shopping_cart)
         # elif choice == "3":
-        #     remove_item(shopping_list)
+        #     remove_item(shopping_cart)
         # elif choice == "4":
         # print("Thank you for shopping at Pawesome Warehouse")
         # else:
