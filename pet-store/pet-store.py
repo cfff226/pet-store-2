@@ -3,6 +3,7 @@ import math
 # A program which allows the user to add, remove and checkout with items that they purchase
 # This program is a simplified version to pet-store and will include functions
 
+
 # List of items
 menu = [
     "Purina One Cat Salmon - Whole Grain               ",
@@ -56,6 +57,8 @@ def add_item(shopping_cart):
 
 def main():
     shopping_cart = []
+    shopping_quant = []
+    price_total = []
 
     while True:
         # Display the menu and the cart until the user checks out
