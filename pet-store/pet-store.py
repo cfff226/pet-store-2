@@ -63,8 +63,8 @@ def view_cart(shopping_cart, shopping_quant):
         idx = menu.index(shopping_cart[i])
         unit_price = prices[idx]
         print(
-            f"Item: {shopping_cart[i]} Quantity: {shopping_quant[i]}        \
-                      Price: £{unit_price}\n\n-----------------------------------------------------------------------------------------------------\n"
+            f"\nItem: {shopping_cart[i]} Quantity: {shopping_quant[i]}        \
+                      Price: £{unit_price}\n\n---------------------------------------------------------------------------------------------------------------\n"
         )
 
 
@@ -73,12 +73,13 @@ def main():
     shopping_quant = []
     price_total = []
 
+    print("\nWelcome to Pawesome Warehouse \n\nWhat would you like to do?\n")
+
     while True:
         # Display the menu and the cart until the user checks out
-        print("\nWelcome to Pawesome Warehouse \n\nWhat would you like to do?\n")
 
         print(
-            "1. Add an item to your cart \n2. View your cart \n3. Remove an item from your cart \n\n4. Checkout"
+            "1. Add an item to your cart \n2. View your cart \n3. Remove an item from your cart \n4. Checkout"
         )
         choice = input(
             "\nPlease enter the number of the option that you would like to choose: "
