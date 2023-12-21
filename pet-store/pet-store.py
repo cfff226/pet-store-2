@@ -30,25 +30,27 @@ def add_item(shopping_cart):
                 "\nPlease input the number of the item that you would like to add to your cart: "
             )
         )
-        if menu[item - 1] in shopping_cart:
-            print("repeated order")
-            idx = shopping_cart.index(menu[item - 1])
-            print(idx)
-        else:
-            print("new selection")
-            shopping_cart.append(menu[item - 1])
-        
-
     except ValueError:
         print("You have entered an incorrect value")
         add_item(shopping_cart)
 
+    while True:
+        try:
+            quant = int(
+                input("\nPlease input the quantity of the item you wish to purchase: ")
+            )
+            break
+        except ValueError:
+            print("\n\nYou've entered an incorrect value")
+            continue
 
-
-
-
-
-
+    if menu[item - 1] in shopping_cart:
+        print("repeated order")
+        idx = shopping_cart.index(menu[item - 1])
+        print(idx)
+    else:
+        print("new selection")
+        shopping_cart.append(menu[item - 1])
 
 
 def main():
