@@ -82,6 +82,16 @@ def remove_item(shopping_cart):
         print("This item does not exist in your cart")
         remove_item(shopping_cart)
 
+    while True:
+        try:
+            quant = int(
+                input("\nPlease input the quantity of the item you wish to remove: ")
+            )
+            break
+        except ValueError:
+            print("You have entered an incorrect value")
+            continue
+
 
 def main():
     shopping_cart = []
