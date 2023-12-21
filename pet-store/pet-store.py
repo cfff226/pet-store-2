@@ -56,12 +56,16 @@ def add_item(shopping_cart, shopping_quant):
 
         print("\nThis item has been added to your cart successfully\n")
 
+
 # View shopping cart
-def view_cart(shopping_cart):
-    print(shopping_cart)
-
-
-
+def view_cart(shopping_cart, shopping_quant):
+    for i in range(len(shopping_cart)):
+        idx = menu.index(shopping_cart[i])
+        unit_price = prices[idx]
+        print(
+            f"Item: {shopping_cart[i]} Quantity: {shopping_quant[i]}        \
+                      Price: £{unit_price}\n\n-----------------------------------------------------------------------------------------------------\n"
+        )
 
 
 def main():
@@ -74,7 +78,7 @@ def main():
         print("\nWelcome to Pawesome Warehouse \n\nWhat would you like to do?\n")
 
         print(
-            "1. Add an item to your cart \n2. View your cart \n3. Remove an item from your cart \n4. Checkout"
+            "1. Add an item to your cart \n2. View your cart \n3. Remove an item from your cart \n\n4. Checkout"
         )
         choice = input(
             "\nPlease enter the number of the option that you would like to choose: "
@@ -82,7 +86,7 @@ def main():
         if choice == "1":
             add_item(shopping_cart, shopping_quant)
         elif choice == "2":
-            view_cart(shopping_cart)
+            view_cart(shopping_cart, shopping_quant)
         # elif choice == "3":
         #     remove_item(shopping_cart)
         # elif choice == "4":
