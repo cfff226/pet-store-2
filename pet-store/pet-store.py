@@ -68,6 +68,15 @@ def view_cart(shopping_cart, shopping_quant):
         )
 
 
+# Remove item from cart
+def remove_item(shopping_cart, shopping_quant):
+    
+
+
+
+
+
+
 def main():
     shopping_cart = []
     shopping_quant = []
@@ -88,8 +97,8 @@ def main():
             add_item(shopping_cart, shopping_quant)
         elif choice == "2":
             view_cart(shopping_cart, shopping_quant)
-        # elif choice == "3":
-        #     remove_item(shopping_cart)
+        elif choice == "3":
+            remove_item(shopping_cart)
         # elif choice == "4":
         # print("Thank you for shopping at Pawesome Warehouse")
         # else:
