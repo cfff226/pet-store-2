@@ -48,9 +48,11 @@ def add_item(shopping_cart, shopping_quant):
         print("repeated order")
         idx = shopping_cart.index(menu[item - 1])
         print(idx)
+        shopping_quant[idx] += quant
     else:
         print("new selection")
         shopping_cart.append(menu[item - 1])
+        shopping_quant.append(quant)
 
 
 def main():
