@@ -29,11 +29,29 @@ def add_item(shopping_list):
                 "\nPlease input the number of the item that you would like to add to your cart: "
             )
         )
-        shopping_list.append(item)
+        shopping_list.append(menu[item - 1])
         print(shopping_list)
+    
+        print(menu[item -1])
+        if menu[item -1] in shopping_list:
+            print("this item is in your cart")
+
     except ValueError:
         print("You have entered an incorrect value")
         add_item(shopping_list)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 def main():
