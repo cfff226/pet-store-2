@@ -54,6 +54,8 @@ def add_item(shopping_cart, shopping_quant):
         shopping_cart.append(menu[item - 1])
         shopping_quant.append(quant)
 
+        print("\nThis item has been added to your cart successfully\n")
+
 
 def main():
     shopping_cart = []
