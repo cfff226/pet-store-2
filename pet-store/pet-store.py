@@ -62,6 +62,7 @@ def view_cart(shopping_cart, shopping_quant):
     for i in range(len(shopping_cart)):
         idx = menu.index(shopping_cart[i])
         unit_price = prices[idx]
+        unit_price = unit_price * shopping_quant[i]
         print(
             f"\nItem: {i + 1} {shopping_cart[i]} Quantity: {shopping_quant[i]}        \
                       Price: £{unit_price}\n\n---------------------------------------------------------------------------------------------------------------\n"
@@ -101,7 +102,6 @@ def remove_item(shopping_cart, shopping_quant, item_to_remove):
             shopping_cart.remove(shopping_cart[remove_item_input - 1])
             print(shopping_cart)
             shopping_quant[idx] = 1
-
 
 
 def main():
