@@ -49,16 +49,13 @@ def add_item(shopping_cart, shopping_quant, price_total, unit_price):
         idx = shopping_cart.index(menu[item - 1])
         print(idx)
         shopping_quant[idx] += quant
-        
+
     else:
         print("new selection")
         shopping_cart.append(menu[item - 1])
         shopping_quant.append(quant)
-        for i in range(len(shopping_cart)):
-            idx = menu.index(shopping_cart[i])
-            unit_price = prices[idx]
-            price_total.append(unit_price)
-            print(price_total)
+        # for i in range(len(shopping_cart)):
+        #     idx = menu.index(shopping_cart[i])
 
         print("\nThis item has been added to your cart successfully\n")
 
@@ -69,6 +66,7 @@ def view_cart(shopping_cart, shopping_quant):
         idx = menu.index(shopping_cart[i])
         unit_price = prices[idx]
         unit_price = unit_price * shopping_quant[i]
+
         print(
             f"\nItem: {i + 1} {shopping_cart[i]} Quantity: {shopping_quant[i]}        \
                       Price: £{unit_price}\n\n---------------------------------------------------------------------------------------------------------------\n"
