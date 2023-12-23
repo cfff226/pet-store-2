@@ -69,7 +69,7 @@ def view_cart(shopping_cart, shopping_quant):
 
 
 # Remove item from cart
-def remove_item(shopping_cart):
+def remove_item(shopping_cart, shopping_quant):
     try:
         remove_item_input = int(
             input("\nPlease input the number of the item you wish to remove: ")
@@ -91,6 +91,11 @@ def remove_item(shopping_cart):
         except ValueError:
             print("You have entered an incorrect value")
             continue
+
+    if shopping_cart[remove_item_input - 1] in shopping_cart:
+        idx = shopping_cart.index(shopping_cart[remove_item_input - 1])
+        shopping_quant[idx] = shopping_quant[idx] - quant
+        print(idx)
 
 
 def main():
@@ -114,7 +119,7 @@ def main():
         elif choice == "2":
             view_cart(shopping_cart, shopping_quant)
         elif choice == "3":
-            remove_item(shopping_cart)
+            remove_item(shopping_cart, shopping_quant)
         # elif choice == "4":
         # print("Thank you for shopping at Pawesome Warehouse")
         # else:
