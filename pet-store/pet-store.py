@@ -20,7 +20,7 @@ prices = [7.99, 5.99, 3.99, 7.00, 4.00, 3.99, 4.00, 6.99]
 
 
 # Add item to cart
-def add_item(shopping_cart, shopping_quant):
+def add_item(shopping_cart, shopping_quant, price_total, unit_price):
     for i in range(len(menu)):
         print(str(i + 1) + ". " + menu[i], prices[i])
 
@@ -49,10 +49,16 @@ def add_item(shopping_cart, shopping_quant):
         idx = shopping_cart.index(menu[item - 1])
         print(idx)
         shopping_quant[idx] += quant
+        
     else:
         print("new selection")
         shopping_cart.append(menu[item - 1])
         shopping_quant.append(quant)
+        for i in range(len(shopping_cart)):
+            idx = menu.index(shopping_cart[i])
+            unit_price = prices[idx]
+            price_total.append(unit_price)
+            print(price_total)
 
         print("\nThis item has been added to your cart successfully\n")
 
@@ -109,6 +115,7 @@ def main():
     shopping_quant = []
     price_total = []
     item_to_remove = ""
+    unit_price = 0
 
     print("\nWelcome to Pawesome Warehouse \n\nWhat would you like to do?\n")
 
@@ -122,7 +129,7 @@ def main():
             "\nPlease enter the number of the option that you would like to choose: "
         )
         if choice == "1":
-            add_item(shopping_cart, shopping_quant)
+            add_item(shopping_cart, shopping_quant, price_total, unit_price)
         elif choice == "2":
             view_cart(shopping_cart, shopping_quant)
         elif choice == "3":
