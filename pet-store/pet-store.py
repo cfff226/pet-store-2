@@ -77,10 +77,10 @@ def remove_item(shopping_cart, shopping_quant):
         print("\nYou selected: ", shopping_cart[remove_item_input - 1])
     except ValueError:
         print("You have entered an incorrect value")
-        remove_item(shopping_cart)
+        remove_item(shopping_cart, shopping_quant)
     except IndexError:
         print("This item does not exist in your cart")
-        remove_item(shopping_cart)
+        remove_item(shopping_cart, shopping_quant)
 
     while True:
         try:
@@ -95,7 +95,20 @@ def remove_item(shopping_cart, shopping_quant):
     if shopping_cart[remove_item_input - 1] in shopping_cart:
         idx = shopping_cart.index(shopping_cart[remove_item_input - 1])
         shopping_quant[idx] = shopping_quant[idx] - quant
-        print(idx)
+        if shopping_cart[remove_item_input -1] in shopping_cart and shopping_quant[idx] == 0:
+            shopping_cart.pop(idx)
+           
+    
+  
+
+
+
+
+
+
+
+
+
 
 
 def main():
