@@ -98,7 +98,9 @@ def remove_item(shopping_cart, shopping_quant, item_to_remove):
         shopping_quant[idx] = shopping_quant[idx] - quant
         print(shopping_quant[idx])
         if item_to_remove in shopping_cart and shopping_quant[idx] == 0:
-            shopping_cart.remove(item_to_remove)
+            shopping_cart.remove(shopping_cart[remove_item_input - 1])
+            print(shopping_cart)
+            shopping_quant.clear()
 
 
 def main():
