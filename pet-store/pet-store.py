@@ -60,16 +60,20 @@ def add_item(shopping_cart, shopping_quant):
 
 
 # View shopping cart
-def view_cart(shopping_cart, shopping_quant):
+def view_cart(shopping_cart, shopping_quant, price_total):
     for i in range(len(shopping_cart)):
         idx = menu.index(shopping_cart[i])
         unit_price = prices[idx]
         unit_price = unit_price * shopping_quant[i]
+        price_total.append(unit_price)
+        total = sum(price_total)
 
         print(
-            f"\nItem: {i + 1} {shopping_cart[i]} Quantity: {shopping_quant[i]}        \
-                      Price: £{unit_price}\n\n---------------------------------------------------------------------------------------------------------------\n"
+            f"\nItem {i + 1}: {shopping_cart[i]} Quantity: {shopping_quant[i]}        \
+                      Price: £{unit_price}\n\n-------------------------------------------------------------------------------------------------------------------\n"
         )
+    print(f"\n-------------------- Your cart total is £{total} -------------------- \n")
+    price_total.clear()
 
 
 # Remove item from cart
@@ -111,7 +115,6 @@ def main():
     shopping_quant = []
     price_total = []
     item_to_remove = ""
-    unit_price = 0
 
     print("\nWelcome to Pawesome Warehouse \n\nWhat would you like to do?\n")
 
@@ -127,7 +130,7 @@ def main():
         if choice == "1":
             add_item(shopping_cart, shopping_quant)
         elif choice == "2":
-            view_cart(shopping_cart, shopping_quant)
+            view_cart(shopping_cart, shopping_quant, price_total)
         elif choice == "3":
             remove_item(shopping_cart, shopping_quant, item_to_remove)
         elif choice == "4":
