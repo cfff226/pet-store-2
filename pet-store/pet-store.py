@@ -53,27 +53,33 @@ def add_item(shopping_cart, shopping_quant):
         print("new selection")
         shopping_cart.append(menu[item - 1])
         shopping_quant.append(quant)
-        # for i in range(len(shopping_cart)):
-        #     idx = menu.index(shopping_cart[i])
-
         print("\nThis item has been added to your cart successfully\n")
 
 
 # View shopping cart
 def view_cart(shopping_cart, shopping_quant, price_total):
-    for i in range(len(shopping_cart)):
-        idx = menu.index(shopping_cart[i])
-        unit_price = prices[idx]
-        unit_price = unit_price * shopping_quant[i]
-        price_total.append(unit_price)
-        total = sum(price_total)
-
+    price_total = []
+    if shopping_quant == []:
         print(
-            f"\nItem {i + 1}: {shopping_cart[i]} Quantity: {shopping_quant[i]}        \
-                      Price: £{unit_price}\n\n-------------------------------------------------------------------------------------------------------------------\n"
+            "\n\n-------------------- Your cart is currently empty -------------------- \n\n"
         )
-    print(f"\n-------------------- Your cart total is £{total} -------------------- \n")
-    price_total.clear()
+    else:
+        view_cart(shopping_cart, shopping_quant, price_total)
+        for i in range(len(shopping_cart)):
+            idx = menu.index(shopping_cart[i])
+            unit_price = prices[idx]
+            unit_price = unit_price * shopping_quant[i]
+            price_total.append(unit_price)
+            total = sum(price_total)
+
+            print(
+                f"\nItem {i + 1}: {shopping_cart[i]} Quantity: {shopping_quant[i]}        \
+                        Price: £{unit_price}\n\n-------------------------------------------------------------------------------------------------------------------\n"
+            )
+        print(
+            f"\n-------------------- Your cart total is £{total} -------------------- \n"
+        )
+        price_total.clear()
 
 
 # Remove item from cart
