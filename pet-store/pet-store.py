@@ -140,7 +140,8 @@ def main():
         elif choice == "3":
             remove_item(shopping_cart, shopping_quant, item_to_remove)
         elif choice == "4":
-            print("Thank you for shopping at Pawesome Warehouse")
+            print("\n\n-------------------- Thank you for shopping at Pawsome Warehouse --------------------\n\n")
+            break
         else:
             continue
 
