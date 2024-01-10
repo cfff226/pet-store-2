@@ -20,7 +20,7 @@ prices = [7.99, 5.99, 3.99, 7.00, 4.00, 3.99, 4.00, 6.99]
 
 
 # Add item to cart
-def add_item(shopping_cart, shopping_quant, price_total, unit_price):
+def add_item(shopping_cart, shopping_quant):
     for i in range(len(menu)):
         print(str(i + 1) + ". " + menu[i], prices[i])
 
@@ -47,30 +47,35 @@ def add_item(shopping_cart, shopping_quant, price_total, unit_price):
     if menu[item - 1] in shopping_cart:
         print("repeated order")
         idx = shopping_cart.index(menu[item - 1])
-        print(idx)
         shopping_quant[idx] += quant
 
     else:
-        print("new selection")
+        print("\n\n-------------------- New selection -------------------- \n")
         shopping_cart.append(menu[item - 1])
         shopping_quant.append(quant)
-        # for i in range(len(shopping_cart)):
-        #     idx = menu.index(shopping_cart[i])
-
         print("\nThis item has been added to your cart successfully\n")
 
 
 # View shopping cart
-def view_cart(shopping_cart, shopping_quant):
-    for i in range(len(shopping_cart)):
-        idx = menu.index(shopping_cart[i])
-        unit_price = prices[idx]
-        unit_price = unit_price * shopping_quant[i]
-
+def view_cart(shopping_cart, shopping_quant, price_total):
+    if shopping_cart == []:
         print(
-            f"\nItem: {i + 1} {shopping_cart[i]} Quantity: {shopping_quant[i]}        \
-                      Price: £{unit_price}\n\n---------------------------------------------------------------------------------------------------------------\n"
+            "\n\n-------------------- Your cart is currently empty -------------------- \n\n"
         )
+    else:
+        for i in range(len(shopping_cart)):
+            idx = menu.index(shopping_cart[i])
+            unit_price = prices[idx]
+            unit_price = unit_price * shopping_quant[i]
+            price_total.append(unit_price)
+            total = sum(price_total)
+
+            print(
+                f"\nItem {i + 1}: {shopping_cart[i]} Quantity: {shopping_quant[i]}        \
+                        Price: £{unit_price}\n\n-------------------------------------------------------------------------------------------------------------------\n"
+            )
+        print(f"\n\nYour cart total is £{total}\n\n")
+        price_total.clear()
 
 
 # Remove item from cart
@@ -101,10 +106,9 @@ def remove_item(shopping_cart, shopping_quant, item_to_remove):
         idx = shopping_cart.index(shopping_cart[remove_item_input - 1])
         item_to_remove = shopping_cart[remove_item_input - 1]
         shopping_quant[idx] = shopping_quant[idx] - quant
-        print(shopping_quant[idx])
+
         if item_to_remove in shopping_cart and shopping_quant[idx] == 0:
             shopping_cart.remove(shopping_cart[remove_item_input - 1])
-            print(shopping_cart)
             shopping_quant[idx] = 1
 
 
@@ -113,7 +117,6 @@ def main():
     shopping_quant = []
     price_total = []
     item_to_remove = ""
-    unit_price = 0
 
     print("\nWelcome to Pawesome Warehouse \n\nWhat would you like to do?\n")
 
@@ -124,18 +127,21 @@ def main():
             "1. Add an item to your cart \n2. View your cart \n3. Remove an item from your cart \n4. Checkout"
         )
         choice = input(
-            "\nPlease enter the number of the option that you would like to choose: "
+            "\nPlease enter the number of the option that you would like to choose: \n"
         )
         if choice == "1":
-            add_item(shopping_cart, shopping_quant, price_total, unit_price)
+            add_item(shopping_cart, shopping_quant)
         elif choice == "2":
-            view_cart(shopping_cart, shopping_quant)
+            view_cart(shopping_cart, shopping_quant, price_total)
         elif choice == "3":
             remove_item(shopping_cart, shopping_quant, item_to_remove)
-        # elif choice == "4":
-        # print("Thank you for shopping at Pawesome Warehouse")
-        # else:
-        # continue
+        elif choice == "4":
+            print(
+                "\n\n-------------------- Thank you for shopping at Pawsome Warehouse --------------------\n\n"
+            )
+            break
+        else:
+            continue
 
 
 main()
