@@ -50,7 +50,7 @@ def add_item(shopping_cart, shopping_quant):
         shopping_quant[idx] += quant
 
     else:
-        print("new selection")
+        print("\n\n-------------------- New selection -------------------- \n")
         shopping_cart.append(menu[item - 1])
         shopping_quant.append(quant)
         print("\nThis item has been added to your cart successfully\n")
@@ -58,13 +58,11 @@ def add_item(shopping_cart, shopping_quant):
 
 # View shopping cart
 def view_cart(shopping_cart, shopping_quant, price_total):
-    price_total = []
-    if shopping_quant == []:
+    if shopping_cart == []:
         print(
             "\n\n-------------------- Your cart is currently empty -------------------- \n\n"
         )
     else:
-        view_cart(shopping_cart, shopping_quant, price_total)
         for i in range(len(shopping_cart)):
             idx = menu.index(shopping_cart[i])
             unit_price = prices[idx]
@@ -76,9 +74,7 @@ def view_cart(shopping_cart, shopping_quant, price_total):
                 f"\nItem {i + 1}: {shopping_cart[i]} Quantity: {shopping_quant[i]}        \
                         Price: £{unit_price}\n\n-------------------------------------------------------------------------------------------------------------------\n"
             )
-        print(
-            f"\n-------------------- Your cart total is £{total} -------------------- \n"
-        )
+        print(f"\n\nYour cart total is £{total}\n\n")
         price_total.clear()
 
 
@@ -131,7 +127,7 @@ def main():
             "1. Add an item to your cart \n2. View your cart \n3. Remove an item from your cart \n4. Checkout"
         )
         choice = input(
-            "\nPlease enter the number of the option that you would like to choose: "
+            "\nPlease enter the number of the option that you would like to choose: \n"
         )
         if choice == "1":
             add_item(shopping_cart, shopping_quant)
@@ -140,7 +136,9 @@ def main():
         elif choice == "3":
             remove_item(shopping_cart, shopping_quant, item_to_remove)
         elif choice == "4":
-            print("\n\n-------------------- Thank you for shopping at Pawsome Warehouse --------------------\n\n")
+            print(
+                "\n\n-------------------- Thank you for shopping at Pawsome Warehouse --------------------\n\n"
+            )
             break
         else:
             continue
