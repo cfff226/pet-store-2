@@ -16,6 +16,7 @@ menu = [
     "Chicken And Country Vegetable Dry Dog Food        ",
 ]
 
+# Prices of the food
 prices = [7.99, 5.99, 3.99, 7.00, 4.00, 3.99, 4.00, 6.99]
 
 
@@ -53,7 +54,9 @@ def add_item(shopping_cart, shopping_quant):
         print("\n\n-------------------- New selection -------------------- \n")
         shopping_cart.append(menu[item - 1])
         shopping_quant.append(quant)
-        print("\nThis item has been added to your cart successfully\n")
+        print(
+            "\n -------------------- This item has been added to your cart successfully  -------------------- \n"
+        )
 
 
 # View shopping cart
