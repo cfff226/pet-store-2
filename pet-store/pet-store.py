@@ -21,8 +21,10 @@ prices = [7.99, 5.99, 3.99, 7.00, 4.00, 3.99, 4.00, 6.99]
 
 # Add item to cart
 def add_item(shopping_cart, shopping_quant):
+    print("----------------------------------------------------------------------------------\n\t\t\t\t\tMENU\n")
     for i in range(len(menu)):
-        print(str(i + 1) + ". " + menu[i], prices[i])
+        print(str(i + 1) + ". " + menu[i], "\t\t\t", "£", (prices[i]), "\n")
+    print("\n----------------------------------------------------------------------------------\n")
 
     try:
         item = int(
