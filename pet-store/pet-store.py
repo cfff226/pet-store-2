@@ -3,6 +3,7 @@ import math
 # A program which allows the user to add, remove and checkout with items that they purchase
 # This program is a simplified version to pet-store and will include functions
 
+print("\nWelcome to Pawesome Warehouse \n\nWhat would you like to do?\n")
 
 # List of items
 menu = [
@@ -21,10 +22,14 @@ prices = [7.99, 5.99, 3.99, 7.00, 4.00, 3.99, 4.00, 6.99]
 
 # Add item to cart
 def add_item(shopping_cart, shopping_quant):
-    print("----------------------------------------------------------------------------------\n\t\t\t\t\tMENU\n")
+    print(
+        "----------------------------------------------------------------------------------\n\t\t\t\t\tMENU\n"
+    )
     for i in range(len(menu)):
         print(str(i + 1) + ". " + menu[i], "\t\t\t", "£", (prices[i]), "\n")
-    print("\n----------------------------------------------------------------------------------\n")
+    print(
+        "\n----------------------------------------------------------------------------------\n"
+    )
 
     try:
         item = int(
@@ -52,7 +57,7 @@ def add_item(shopping_cart, shopping_quant):
         shopping_quant[idx] += quant
 
     else:
-        print("\n\n-------------------- New selection -------------------- \n")
+        print("\n\n\t\tNew selection\n")
         shopping_cart.append(menu[item - 1])
         shopping_quant.append(quant)
         print("\nThis item has been added to your cart successfully\n")
@@ -62,7 +67,7 @@ def add_item(shopping_cart, shopping_quant):
 def view_cart(shopping_cart, shopping_quant, price_total):
     if shopping_cart == []:
         print(
-            "\n\n-------------------- Your cart is currently empty -------------------- \n\n"
+            "\n\n\t\tYour cart is currently empty\n\n"
         )
     else:
         for i in range(len(shopping_cart)):
@@ -88,10 +93,10 @@ def remove_item(shopping_cart, shopping_quant, item_to_remove):
         )
         print("\nYou selected: ", shopping_cart[remove_item_input - 1])
     except ValueError:
-        print("You have entered an incorrect value")
+        print("\n\n\t\tYou have entered an incorrect value")
         remove_item(shopping_cart, shopping_quant, item_to_remove)
     except IndexError:
-        print("This item does not exist in your cart")
+        print("\n\n\t\tThis item does not exist in your cart")
         remove_item(shopping_cart, shopping_quant, item_to_remove)
 
     while True:
@@ -101,7 +106,7 @@ def remove_item(shopping_cart, shopping_quant, item_to_remove):
             )
             break
         except ValueError:
-            print("You have entered an incorrect value")
+            print("\n\n\t\tYou have entered an incorrect value")
             continue
 
     if shopping_cart[remove_item_input - 1] in shopping_cart:
@@ -113,6 +118,8 @@ def remove_item(shopping_cart, shopping_quant, item_to_remove):
             shopping_cart.remove(shopping_cart[remove_item_input - 1])
             shopping_quant[idx] = 1
 
+    print("\n\t\tYour changes to the shopping cart have been successful")
+
 
 def main():
     shopping_cart = []
@@ -120,13 +127,11 @@ def main():
     price_total = []
     item_to_remove = ""
 
-    print("\nWelcome to Pawesome Warehouse \n\nWhat would you like to do?\n")
-
     while True:
         # Display the menu and the cart until the user checks out
-
+        print("\t\tMenu:\n")
         print(
-            "1. Add an item to your cart \n2. View your cart \n3. Remove an item from your cart \n4. Checkout"
+            "\n\n1. Add an item to your cart \n2. View your cart \n3. Remove an item from your cart \n4. Checkout"
         )
         choice = input(
             "\nPlease enter the number of the option that you would like to choose: \n"
