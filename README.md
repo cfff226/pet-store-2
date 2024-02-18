@@ -12,6 +12,17 @@
 * To enable the user to view their shopping cart with an accurate depiction of what it includes, an itemised amount and total overall.
 * To provide a seemless user experience incorporating error handling so that the program continues if any arise.
 
+# Installation
+* It is recommended to download a code editor such as VScode if you don't have one, although you can view this project in a browser.
+* Go to https://github.com/cfff226/pet-store-2
+* Select the repository.
+* Navigate to the green button labeled 'Code'. Select 'Download ZIP'.
+* Open up your code editor.
+* Select 'File' and navigate to 'Open Folder' from the tab at the top of your screen. 
+* Select the downloaded folder from the pop up window. 
+* Open the downloaded folder, this will open all files from the zip folder in the code editor.
+
+
 # Usage
 * Select the triangular icon at the top right of your code editor
 
@@ -45,15 +56,6 @@
 
 ![EXIT PROGRAM!](pet-store/pet-store.png/exit.png)
 
-# Installation
-* It is recommended to download a code editor such as VScode if you don't have one, although you can view this project in a browser.
-* Go to https://github.com/cfff226/pet-store-2
-* Select the repository.
-* Navigate to the green button labeled 'Code'. Select 'Download ZIP'.
-* Open up your code editor.
-* Select 'File' and navigate to 'Open Folder' from the tab at the top of your screen. 
-* Select the downloaded folder from the pop up window. 
-* Open the downloaded folder, this will open all files from the zip folder in the code editor.
 
 # Credits
 This project idea intiailly came from the portfolio sessions from the Hyperiondev Software Engineering course.
