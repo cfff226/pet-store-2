@@ -54,3 +54,6 @@
 * Select 'File' and navigate to 'Open Folder' from the tab at the top of your screen. 
 * Select the downloaded folder from the pop up window. 
 * Open the downloaded folder, this will open all files from the zip folder in the code editor.
+
+# Credits
+This project idea intiailly came from the portfolio sessions from the Hyperiondev Software Engineering course.
