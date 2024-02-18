@@ -118,7 +118,7 @@ def remove_item(shopping_cart, shopping_quant, item_to_remove):
             shopping_cart.remove(shopping_cart[remove_item_input - 1])
             shopping_quant[idx] = 1
 
-    print("\n\t\tYour changes to the shopping cart have been successful")
+    print("\n\n\t\tYour changes to the shopping cart have been successful")
 
 
 def main():
@@ -129,12 +129,12 @@ def main():
 
     while True:
         # Display the menu and the cart until the user checks out
-        print("\t\tMenu:\n")
+        print("\n\t\tMenu:\n")
         print(
             "\n\n1. Add an item to your cart \n2. View your cart \n3. Remove an item from your cart \n4. Checkout"
         )
         choice = input(
-            "\nPlease enter the number of the option that you would like to choose: \n"
+            "\nPlease enter the number of the option that you would like to choose: "
         )
         if choice == "1":
             add_item(shopping_cart, shopping_quant)
@@ -144,7 +144,7 @@ def main():
             remove_item(shopping_cart, shopping_quant, item_to_remove)
         elif choice == "4":
             print(
-                "\n\n-------------------- Thank you for shopping at Pawsome Warehouse --------------------\n\n"
+                "\n\n\t\t-------------------- Thank you for shopping at Pawsome Warehouse --------------------\n\n"
             )
             break
         else:
